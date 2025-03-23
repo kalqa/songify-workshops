@@ -16,7 +16,8 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.is;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -77,48 +78,5 @@ class HappyPathIntegrationTest {
                 .andExpect(jsonPath("$.song.name", is("Lose Yourself")))
                 .andExpect(jsonPath("$.song.genre.id", is(1)))
                 .andExpect(jsonPath("$.song.genre.name", is("default")));
-        //  4. when I go to /genres then I can see only default genre with id 1
-        mockMvc.perform(get("/genres")
-                        .contentType(MediaType.APPLICATION_JSON_VALUE)
-                )
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.genres[0].id", is(1)))
-                .andExpect(jsonPath("$.genres[0].name", is("default")))
-        ;
-        //  5. when I post to /genres with Genre "Rap" then Genre "Rap" is returned with id 2
-        mockMvc.perform(post("/genres")
-                        .content("""
-                                {
-                                  "name": "Rap"
-                                }
-                                """.trim())
-                        .contentType(MediaType.APPLICATION_JSON_VALUE)
-                )
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id", is(2)))
-                .andExpect(jsonPath("$.name", is("Rap")));
-        //  6. when I go to /songs/1 then I can see default genre with id 1 and name default
-        mockMvc.perform(get("/songs/1")
-                        .contentType(MediaType.APPLICATION_JSON_VALUE)
-                )
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.song.genre.id", is(1)))
-                .andExpect(jsonPath("$.song.name", is("Till i collapse")))
-                .andExpect(jsonPath("$.song.id", is(1)))
-                .andExpect(jsonPath("$.song.genre.name", is("default")));
-
-        //  7. when I put to /songs/1/genres/1 then Genre with id 2 ("Rap") is added to Song with id 1 ("Til i collapse")
-        mockMvc.perform(put("/songs/1/genres/2")
-                        .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$", is("updated")));
-
-        //  8. when I go to /songs/1 then I can see "Rap" genre
-        mockMvc.perform(get("/songs/1")
-                        .contentType(MediaType.APPLICATION_JSON_VALUE)
-                )
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.song.genre.id", is(2)))
-                .andExpect(jsonPath("$.song.genre.name", is("Rap")));
     }
 }

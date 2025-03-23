@@ -16,8 +16,7 @@ import static org.assertj.core.api.Assertions.catchThrowable;
 class SongifyCrudFacadeTest {
 
     SongifyCrudFacade songifyCrudFacade = SongifyCrudFacadeConfiguration.createSongifyCrud(
-            new InMemorySongRepository(),
-            new InMemoryGenreRepository()
+            new InMemorySongRepository()
     );
 
     @Test
@@ -32,8 +31,6 @@ class SongifyCrudFacadeTest {
         // when
         SongDto songDtoById = songifyCrudFacade.findSongDtoById(songDto.id());
         // then
-        assertThat(songDtoById.genre().name()).isEqualTo("default");
-        assertThat(songDtoById.genre().id()).isEqualTo(1);
         assertThat(songDtoById.id()).isEqualTo(0);
         assertThat(songDtoById.name()).isEqualTo("song1");
     }

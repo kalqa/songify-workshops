@@ -1,7 +1,5 @@
 package com.songify.domain.crud;
 
-import com.songify.domain.crud.dto.GenreDto;
-import com.songify.domain.crud.dto.GenreRequestDto;
 import com.songify.domain.crud.dto.SongDto;
 import com.songify.domain.crud.dto.SongRequestDto;
 import lombok.AllArgsConstructor;
@@ -10,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Set;
 
 @Service
 @AllArgsConstructor
@@ -21,13 +18,6 @@ public class SongifyCrudFacade {
     private final SongUpdater songUpdater;
     private final SongDeleter songDeleter;
     private final SongAdder songAdder;
-    private final GenreAdder genreAdder;
-    private final GenreRetriever genreRetriever;
-    private final GenreAssigner genreAssigner;
-
-    public GenreDto addGenre(GenreRequestDto dto) {
-        return genreAdder.addGenre(dto.name());
-    }
 
     public SongDto addSong(final SongRequestDto dto) {
         return songAdder.addSong(dto);
@@ -69,14 +59,6 @@ public class SongifyCrudFacade {
     public void deleteSongById(Long id) {
         songRetriever.existsById(id);
         songDeleter.deleteById(id);
-    }
-
-    public Set<GenreDto> retrieveGenres() {
-        return genreRetriever.findAll();
-    }
-
-    public void assignGenreToSong(Long genreId, Long songId) {
-        genreAssigner.assignGenreToSong(genreId, songId);
     }
 
 }

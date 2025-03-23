@@ -2,24 +2,16 @@ package com.songify.domain.crud;
 
 class SongifyCrudFacadeConfiguration {
 
-    public static SongifyCrudFacade createSongifyCrud(final SongRepository songRepository,
-                                                      final GenreRepository genreRepository) {
+    public static SongifyCrudFacade createSongifyCrud(final SongRepository songRepository) {
         SongRetriever songRetriever = new SongRetriever(songRepository);
         SongUpdater songUpdater = new SongUpdater(songRepository);
-        GenreDeleter genreDeleter = new GenreDeleter(genreRepository);
-        SongDeleter songDeleter = new SongDeleter(songRepository, songRetriever, genreDeleter);
-        GenreRetriever genreRetriever = new GenreRetriever(genreRepository);
-        GenreAssigner genreAssigner = new GenreAssigner(songRetriever, genreRetriever);
-        SongAdder songAdder = new SongAdder(songRepository, genreAssigner);
-        GenreAdder genreAdder = new GenreAdder(genreRepository);
+        SongDeleter songDeleter = new SongDeleter(songRepository, songRetriever);
+        SongAdder songAdder = new SongAdder(songRepository);
         return new SongifyCrudFacade(
                 songRetriever,
                 songUpdater,
                 songDeleter,
-                songAdder,
-                genreAdder,
-                genreRetriever,
-                genreAssigner
+                songAdder
         );
     }
 }

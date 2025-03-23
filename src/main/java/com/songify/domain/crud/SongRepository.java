@@ -17,7 +17,6 @@ interface SongRepository extends Repository<Song, Long> {
 
     @Query("""
             SELECT s FROM Song s
-            join fetch s.genre
             """)
     List<Song> findAll(Pageable pageable);
 
@@ -36,5 +35,4 @@ interface SongRepository extends Repository<Song, Long> {
 
     boolean existsById(Long id);
 
-//    void deleteById(Long id);
 }
