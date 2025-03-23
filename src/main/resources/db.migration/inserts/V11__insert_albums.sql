@@ -1,0 +1,21 @@
+INSERT INTO album (title, release_date)
+VALUES
+    ('Album 1', '2023-01-15 12:00:00'),
+    ('Album 2', '2023-03-20 14:30:00'),
+    ('Greatest Hits', '2022-10-05 10:45:00'),
+    ('Another Album', '2023-05-12 09:15:00'),
+    ('Best of 2023', '2023-12-28 18:20:00'),
+    ('Golden Classics', '2022-07-02 16:00:00'),
+    ('Summer Vibes', '2023-06-10 13:30:00'),
+    ('Retro Hits', '2023-09-22 11:10:00'),
+    ('Live Concert', '2023-02-18 20:45:00'),
+    ('Acoustic Sessions', '2022-12-05 15:25:00'),
+    ('Party Anthems', '2023-08-17 17:55:00'),
+    ('Country Hits', '2023-04-28 08:30:00'),
+    ('Singles Collection', '2022-11-11 19:40:00'),
+    ('Epic Soundtracks', '2023-07-14 10:05:00'),
+    ('Chill Vibes', '2023-01-30 22:15:00'),
+    ('Rock Legends', '2023-03-05 14:50:00'),
+    ('Indie Jams', '2022-09-08 16:40:00'),
+    ('Guitar Heroes', '2023-06-25 11:55:00'),
+    ('Dance Party Mix', '2023-07-30 19:10:00');

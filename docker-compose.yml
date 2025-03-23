@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15
+    container_name: local_pgdb
+    restart: always
+    ports:
+      - "54320:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: postgres
+  #    volumes:
+  #      - local_pgdata:/var/lib/postgresql/data
+  #      - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
+#  pgadmin:
+#    image: dpage/pgadmin4
+#    container_name: pgadmin4_container
+#    restart: always
+#    ports:
+#      - "5050:80"
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: a@a.pl
+#      PGADMIN_DEFAULT_PASSWORD: admin
+#    volumes:
+#      - pgadmin-data:/var/lib/pgadmin
+
+#volumes:
+#  local_pgdata:
+#  pgadmin-data:

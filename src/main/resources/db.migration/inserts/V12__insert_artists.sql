@@ -1,0 +1,22 @@
+INSERT INTO artist (name)
+VALUES
+    ('Ariana Grande'),
+    ('Ed Sheeran'),
+    ('Taylor Swift'),
+    ('Beyoncé'),
+    ('The Weeknd'),
+    ('Drake'),
+    ('Adele'),
+    ('Billie Eilish'),
+    ('Justin Bieber'),
+    ('Dua Lipa'),
+    ('Coldplay'),
+    ('Kendrick Lamar'),
+    ('Katy Perry'),
+    ('Bruno Mars'),
+    ('Rihanna'),
+    ('Eminem'),
+    ('Lady Gaga'),
+    ('Post Malone'),
+    ('Nicki Minaj'),
+    ('Bob Dylan');
