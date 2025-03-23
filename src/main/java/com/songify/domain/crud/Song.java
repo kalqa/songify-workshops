@@ -53,6 +53,7 @@ class Song extends BaseEntity {
 
     private Long duration;
 
+    // todo after showcase it should be @ManyToOne in prod app
     @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private Genre genre;
 
