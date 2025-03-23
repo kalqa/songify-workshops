@@ -9,9 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
 @AllArgsConstructor
-@Transactional
 public class SongifyCrudFacade {
 
     private final SongRetriever songRetriever;

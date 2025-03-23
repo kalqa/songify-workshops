@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service
 @Log4j2
 @AllArgsConstructor(access = lombok.AccessLevel.PACKAGE)
 class SongDeleter {

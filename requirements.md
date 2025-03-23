@@ -1,28 +1,28 @@
 SONGIFY: APLIKACJA DO ZARZĄDZANIA ALBUMAMI, ARTYSTAMI I PIOSENKAMI
 
-~~1. można dodać artystę (nazwa artysty)~~
-~~2. można dodać gatunek muzyczny (nazwa gatunku)~~
-~~3. można dodać album (tytuł, data wydania, ale musi być w nim przynajmniej jedna piosenka)~~
-~~4. można dodać piosenkę (tytuł, czas trwania, data wydania, jezyk piosenki)~~
-~~6. mozna dodać artyste od razu z albumem i z piosenką (domyslne wartosci)~~
-~~5. można usunąć artystę (usuwamy wtedy jego piosenki oraz albumy, ale jesli było więcej niż jeden artysta w albumie, to usuwamy tylko artystę z albumu i samego artystę)~~
+1. można dodać artystę (nazwa artysty)
+2. można dodać gatunek muzyczny (nazwa gatunku)
+3. można dodać album (tytuł, data wydania, ale musi być w nim przynajmniej jedna piosenka)
+4. można dodać piosenkę (tytuł, czas trwania, data wydania, jezyk piosenki)
+6. mozna dodać artyste od razu z albumem i z piosenką (domyslne wartosci)
+5. można usunąć artystę (usuwamy wtedy jego piosenki oraz albumy, ale jesli było więcej niż jeden artysta w albumie, to usuwamy tylko artystę z albumu i samego artystę)
 6. można usunąć gatunek muzyczny (ale nie może istnieć piosenka z takim gatunkiem)
 7. można usunąć album (ale dopiero wtedy kiedy nie ma już żadnej piosenki przypisanej do albumu)
-~~8. można usunąć piosenkę, ale nie usuwamy albumu i artystów gdy była tylko 1 piosenka w albumie~~
-~~9. można edytować nazwę artysty~~
+8. można usunąć piosenkę, ale nie usuwamy albumu i artystów gdy była tylko 1 piosenka w albumie~~
+9. można edytować nazwę artysty~~
 10. można edytować nazwę gatunku muzycznego
 11. można edytować album (dodawać piosenki, arytstów, zmieniac nazwe albumu)
 12. można edytować piosenkę (czas trwania, artystę, nazwę piosenki)
 13. można przypisać piosenki tylko do albumów
 14. można przypisać piosenki do artysty (poprzez album)
-~~14. można przypisać artystów do albumów (album może mieć więcej artystów, artysta może mieć kilka albumów)~~
+14. można przypisać artystów do albumów (album może mieć więcej artystów, artysta może mieć kilka albumów)~~
 15. można przypisać tylko jeden gatunek muzyczny do piosenki
 16. gdy nie ma przypisanego gatunku muzycznego do piosenki, to wyświetlamy "default"
-~~17. można wyświetlać wszystkie piosenki~~
+17. można wyświetlać wszystkie piosenki~~
 18. można wyświetlać wszystkie gatunki
-~~19. można wyświetlać wszystkich artystów~~
+19. można wyświetlać wszystkich artystów~~
 20. można wyświetlać wszystkie albumy
-~~21. można wyświetlać konkrete albumy z artystami oraz piosenkami w albumie~~
+21. można wyświetlać konkrete albumy z artystami oraz piosenkami w albumie~~
 22. można wyświetlać konkretne gatunki muzyczne wraz z piosenkami
 23. można wyświetlać konkretnych artystów wraz z ich albumami
 24. chcemy mieć trwałe dane
