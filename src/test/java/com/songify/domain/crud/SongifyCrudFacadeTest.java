@@ -54,6 +54,25 @@ class SongifyCrudFacadeTest {
     }
 
     @Test
+    @DisplayName("should update song by")
+    public void should_update_song_by_id() {
+        // given
+        SongRequestDto song = SongRequestDto.builder()
+                .name("song1")
+                .language(SongLanguageDto.ENGLISH)
+                .build();
+        SongDto songDto = songifyCrudFacade.addSong(song);
+        SongDto songDtoById = songifyCrudFacade.findSongDtoById(songDto.id());
+        assertThat(songDtoById.id()).isEqualTo(0L);
+        assertThat(songDtoById.name()).isEqualTo("song1");
+        // when
+        songifyCrudFacade.updateSongById(0L, new SongDto(0L, "song2"));
+        // then
+        SongDto songDtoByIdAfterChange = songifyCrudFacade.findSongDtoById(songDto.id());
+        assertThat(songDtoByIdAfterChange.name()).isEqualTo("song2");
+    }
+
+    @Test
     @DisplayName("should throw exception when song not found by id")
     public void should_throw_exception_when_song_not_found_by_id() {
         // given

@@ -21,6 +21,11 @@ class Song {
 
     private SongLanguage language;
 
+    public Song(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Song(String name) {
         this.name = name;
     }

@@ -32,7 +32,7 @@ public class SongifyCrudFacade {
     public void updateSongById(Long id, SongDto newSongDto) {
         songRetriever.existsById(id);
         // some domain validator
-        Song songValidatedAndReadyToUpdate = new Song(newSongDto.name());
+        Song songValidatedAndReadyToUpdate = new Song(id, newSongDto.name());
         // some domain validator ended checking
         songUpdater.updateById(id, songValidatedAndReadyToUpdate);
     }

@@ -40,7 +40,11 @@ class InMemorySongRepository implements SongRepository{
 
     @Override
     public void updateById(final Long id, final Song newSong) {
-
+        Song value = db.get(id);
+        if(value == null){
+            // throw some ex
+        }
+        db.put(id, newSong);
     }
 
     @Override
@@ -53,6 +57,6 @@ class InMemorySongRepository implements SongRepository{
 
     @Override
     public boolean existsById(final Long id) {
-        return false;
+        return db.get(id) != null;
     }
 }
