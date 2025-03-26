@@ -1,0 +1,8 @@
+CREATE SEQUENCE album_id_seq START WITH 1 INCREMENT BY 1;
+
+CREATE TABLE album
+(
+    id BIGINT PRIMARY KEY,
+    title        VARCHAR(255),
+    release_date TIMESTAMP(6) WITH TIME ZONE
+);

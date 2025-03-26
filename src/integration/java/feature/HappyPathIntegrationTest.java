@@ -8,12 +8,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
-import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -21,13 +16,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(classes = SongifyApplication.class)
-@Testcontainers
+//@Testcontainers
 @AutoConfigureMockMvc
 @ActiveProfiles("integration")
 class HappyPathIntegrationTest {
 
-    @Container
-    static PostgreSQLContainer<?> postgreSQLContainer = new PostgreSQLContainer<>("postgres:15-alpine");
+//    @Container
+//    static PostgreSQLContainer<?> postgreSQLContainer = new PostgreSQLContainer<>("postgres:15-alpine");
 
     @Autowired
     public MockMvc mockMvc;
@@ -35,10 +30,10 @@ class HappyPathIntegrationTest {
     @Autowired
     public ObjectMapper objectMapper;
 
-    @DynamicPropertySource
-    public static void propertyOverride(DynamicPropertyRegistry registry) {
-        registry.add("spring.datasource.url", postgreSQLContainer::getJdbcUrl);
-    }
+//    @DynamicPropertySource
+//    public static void propertyOverride(DynamicPropertyRegistry registry) {
+//        registry.add("spring.datasource.url", postgreSQLContainer::getJdbcUrl);
+//    }
 
     @Test
     public void happy_path() throws Exception {
